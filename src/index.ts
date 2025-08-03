@@ -1,13 +1,12 @@
 import { encoding_for_model, get_encoding } from 'tiktoken';
+import { getModelConfig, getModelsByProvider, getSupportedModels } from './models';
 import {
-  TokenCount,
   CostEstimate,
-  CountOptions,
   CostOptions,
+  CountOptions,
   Message,
-  SupportedModel
+  TokenCount
 } from './types';
-import { getModelConfig, getSupportedModels, getModelsByProvider } from './models';
 
 /**
  * Count tokens in text for a specific model

@@ -1,11 +1,11 @@
 import {
-  countTokens,
-  countChatTokens,
-  estimateCost,
-  estimateChatCost,
   checkTokenLimit,
-  getSupportedModels,
-  getModelsByProvider
+  countChatTokens,
+  countTokens,
+  estimateChatCost,
+  estimateCost,
+  getModelsByProvider,
+  getSupportedModels
 } from './index';
 import { Message } from './types';
 
@@ -45,8 +45,8 @@ describe('llm-token-counter', () => {
     it('should use approximation when requested', () => {
       const text = 'Test message';
       const result = countTokens(text, {
-        model: 'gpt-4o-mini',
-        approximateOnly: true
+        approximateOnly: true,
+        model: 'gpt-4o-mini'
       });
 
       expect(result.tokens).toBeGreaterThan(0);
