@@ -1,0 +1,56 @@
+{
+  "name": "llm-token-counter",
+  "version": "1.0.0",
+  "description": "Count tokens and estimate costs for various LLM APIs (OpenAI, Anthropic, Google, etc.)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest --config jest.config.js",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [
+    "weekend",
+    "date",
+    "utility",
+    "saturday",
+    "sunday",
+    "time",
+    "calendar"
+  ],
+  "author": "Sinan Chaush <sinansonmez@outlook.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sinansonmez/llm-token-counter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sinansonmez/llm-token-counter/issues"
+  },
+  "homepage": "https://github.com/sinansonmez/llm-token-counter#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.0",
+    "eslint": "^9.32.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "tiktoken": "^1.0.10"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
